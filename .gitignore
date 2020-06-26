@@ -86,3 +86,5 @@ lint/tmp/
 
 .idea
 build
+
+github.properties
