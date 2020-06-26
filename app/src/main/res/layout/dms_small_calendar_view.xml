@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black_100"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/small_calendar_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_900"
+        android:textSize="@dimen/font_250"
+        android:text="날짜"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/small_calendar_before_imv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_small_before"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toTopOf="@id/small_calendar_title_tv"
+        app:layout_constraintBottom_toBottomOf="@id/small_calendar_title_tv"
+        app:layout_constraintEnd_toStartOf="@id/small_calendar_title_tv"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/small_calendar_after_imv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_small_after"
+        android:layout_marginStart="16dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toTopOf="@id/small_calendar_title_tv"
+        app:layout_constraintBottom_toBottomOf="@id/small_calendar_title_tv"
+        app:layout_constraintStart_toEndOf="@id/small_calendar_title_tv"/>
+
+    <GridView
+        android:id="@+id/small_calendar_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="7"
+        android:horizontalSpacing="3dp"
+        android:verticalSpacing="2dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="18dp"
+        android:listSelector="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/small_calendar_title_tv"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
