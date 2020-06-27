@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.dsm.dms.dmsviewlibrary.R
-import com.dsm.dms.dmsviewlibrary.calendar.DmsCalendarDaysListener
 import java.util.ArrayList
 
 class DmsBigCalendarDaysAdapter(private val listener: DmsCalendarDaysListener, context: Context, days: ArrayList<Any>) :
@@ -25,10 +25,10 @@ class DmsBigCalendarDaysAdapter(private val listener: DmsCalendarDaysListener, c
                 val day = getItem(position)
 
                 if (day != 0) {
-                    view.setTextColor(context.resources.getColor(R.color.black_900, null))
+                    view.setTextColor(ContextCompat.getColor(context, R.color.black_900))
                     eventDays.forEach { eventDay ->
                         if ("${year}년 ${month}월 ${day}일" == eventDay) {
-                            view.setTextColor(context.resources.getColor(R.color.main_900, null))
+                            view.setTextColor(ContextCompat.getColor(context, R.color.main_900))
                         }
                     }
                     view.background = context.getDrawable(R.drawable.calendar_day_normal)
@@ -48,15 +48,15 @@ class DmsBigCalendarDaysAdapter(private val listener: DmsCalendarDaysListener, c
                             else {
                                 tv.background = context.getDrawable(R.drawable.calendar_day_normal)
                             }
-                            tv.setTextColor(context.resources.getColor(R.color.black_900, null))
+                            tv.setTextColor(ContextCompat.getColor(context, R.color.black_900))
                             eventDays.forEach { eventDay ->
                                 if ("${year}년 ${month}월 ${tv.text}일" == eventDay) {
-                                    tv.setTextColor(context.resources.getColor(R.color.main_900, null))
+                                    tv.setTextColor(ContextCompat.getColor(context, R.color.main_900))
                                 }
                             }
                         }
 
-                        view.setTextColor(context.resources.getColor(R.color.black_100, null))
+                        view.setTextColor(ContextCompat.getColor(context, R.color.black_100))
                         view.background = context.getDrawable(R.drawable.calendar_day_solid)
 
                         selectedDay(day)

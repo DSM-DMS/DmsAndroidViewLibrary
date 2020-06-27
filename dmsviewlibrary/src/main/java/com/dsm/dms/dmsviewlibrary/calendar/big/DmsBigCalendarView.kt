@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.*
 import com.dsm.dms.dmsviewlibrary.R
-import com.dsm.dms.dmsviewlibrary.calendar.DmsCalendarDaysListener
 import com.dsm.dms.dmsviewlibrary.user.DmsCalendarUserListener
 import kotlinx.android.synthetic.main.dms_big_calendar_view.view.*
 import java.text.SimpleDateFormat
@@ -14,7 +13,8 @@ import java.util.Calendar.*
 import kotlin.collections.ArrayList
 
 
-class DmsBigCalendarView(context: Context, attrs: AttributeSet) : LinearLayout(context, attrs), DmsCalendarDaysListener {
+class DmsBigCalendarView(context: Context, attrs: AttributeSet) : LinearLayout(context, attrs),
+    DmsCalendarDaysListener {
 
     override lateinit var beforeImv: ImageView
     override lateinit var afterImv: ImageView
