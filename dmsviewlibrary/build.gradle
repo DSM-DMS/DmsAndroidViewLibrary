@@ -42,17 +42,17 @@ def githubProperties = new Properties()
 githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
 
 def getVersionName = { ->
-    return "0.0.1"
+    return "0.0.2"
 }
 
 def getArtificatId = { ->
-    return "dmsAndroidViewLibrary"
+    return "dmsviewlibrary"
 }
 
 publishing {
     publications {
         bar(MavenPublication) {
-            groupId 'com.dsm.dms.dmsviewlibrary'
+            groupId 'com.dsm.dms.library'
             artifactId getArtificatId()
             version getVersionName()
             artifact("$buildDir/outputs/aar/${getArtificatId()}-release.aar")
