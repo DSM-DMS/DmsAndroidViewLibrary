@@ -1,4 +1,5 @@
-# DmsAndroidViewLibrary
+[![Download](https://api.bintray.com/packages/dsm-dms/DmsAndroidViewLibrary/dmsviewlibrary/images/download.svg?version=0.0.2) ](https://bintray.com/dsm-dms/DmsAndroidViewLibrary/dmsviewlibrary/0.0.2/link)
+# DmsAndroidViewLibrary 
 Dms에서 사용할 Android View Library 입니다.
 
 ## Setting
