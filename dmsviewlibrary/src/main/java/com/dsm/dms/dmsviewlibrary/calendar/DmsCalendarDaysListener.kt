@@ -1,4 +1,4 @@
-package com.dsm.dms.dmsviewlibrary.calendar.big
+package com.dsm.dms.dmsviewlibrary.calendar
 
 import android.widget.GridView
 import android.widget.ImageView

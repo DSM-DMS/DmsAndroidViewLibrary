@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.*
 import com.dsm.dms.dmsviewlibrary.R
+import com.dsm.dms.dmsviewlibrary.calendar.DmsCalendarDaysListener
 import com.dsm.dms.dmsviewlibrary.user.DmsCalendarUserListener
 import kotlinx.android.synthetic.main.dms_big_calendar_view.view.*
 import java.text.SimpleDateFormat
@@ -25,7 +26,7 @@ class DmsBigCalendarView(context: Context, attrs: AttributeSet) : LinearLayout(c
 
     override var calendar: Calendar = getInstance()
     override var today: String = ""
-    override val sdf: SimpleDateFormat = SimpleDateFormat("yyyy년 MM월 dd일", Locale.KOREA)
+    override val sdf: SimpleDateFormat = SimpleDateFormat("yyyy년 M월 d일", Locale.KOREAN)
 
     override var year: Int = 0
     override var month: Int = 0
@@ -42,9 +43,9 @@ class DmsBigCalendarView(context: Context, attrs: AttributeSet) : LinearLayout(c
     }
 
     override fun selectedDay(day: Int) {
-        val sdf = SimpleDateFormat("yyyy년 M월 d일 E요일", Locale.KOREAN)
+        val daySdf = SimpleDateFormat("yyyy년 M월 d일 E요일", Locale.KOREAN)
         calendar.set(DAY_OF_MONTH, day)
-        titleTv.text = sdf.format(calendar.time)
+        titleTv.text = daySdf.format(calendar.time)
 
         selectedDay = day
     }
@@ -69,7 +70,7 @@ class DmsBigCalendarView(context: Context, attrs: AttributeSet) : LinearLayout(c
         eventDays.clear()
         dates.forEach { date ->
             eventDays.add(
-                SimpleDateFormat("yyyy년 M월 d일", Locale.KOREA).format(date)
+                sdf.format(date)
             )
         }
 

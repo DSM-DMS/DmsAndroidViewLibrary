@@ -9,7 +9,9 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.dsm.dms.dmsviewlibrary.R
-import java.util.ArrayList
+import com.dsm.dms.dmsviewlibrary.calendar.DmsCalendarDaysListener
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DmsBigCalendarDaysAdapter(private val listener: DmsCalendarDaysListener, context: Context, days: ArrayList<Any>) :
     ArrayAdapter<Any>(context, R.layout.item_big_calendar_view, days) {
@@ -63,7 +65,14 @@ class DmsBigCalendarDaysAdapter(private val listener: DmsCalendarDaysListener, c
 
                         selectedTv = view
 
-                        eventListener?.let { it.selectedEvent("${year}년 ${month}월 ${selectedDay}일") }
+                        eventListener?.let {
+                            val daySdf = SimpleDateFormat("yyyy년 M월 d일 E요일", Locale.KOREAN)
+                            it.selectedEvent(
+                                daySdf.format(
+                                    sdf.parse("${year}년 ${month}월 ${selectedDay}일")
+                                )
+                            )
+                        }
                     }
                 }
             }
