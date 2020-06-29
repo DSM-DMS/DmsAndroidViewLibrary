@@ -10,11 +10,13 @@ class MainActivity: AppCompatActivity(), DmsCalendarUserListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        calendar.setBigCalendar(Calendar.getInstance().time, this)
-        calendar.setBigCalendarEventDays(arrayListOf(Calendar.getInstance().time))
+        big_calendar.setCalendar(Date(), this)
+        big_calendar.setBigCalendarEventDays(arrayListOf(Date()))
+
+        small_calendar.setCalendar(Date(), this)
     }
 
     override fun selectedEvent(dateString: String) {
-        text.text = dateString
+        big_text.text = dateString
     }
 }

@@ -1,4 +1,4 @@
-package com.dsm.dms.dmsviewlibrary.calendar.big
+package com.dsm.dms.dmsviewlibrary.calendar
 
 import android.content.Context
 import android.view.Gravity
@@ -9,19 +9,26 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.dsm.dms.dmsviewlibrary.R
-import com.dsm.dms.dmsviewlibrary.calendar.DmsCalendarDaysListener
 import java.text.SimpleDateFormat
 import java.util.*
 
-class DmsBigCalendarDaysAdapter(private val listener: DmsCalendarDaysListener, context: Context, days: ArrayList<Any>) :
-    ArrayAdapter<Any>(context, R.layout.item_big_calendar_view, days) {
+class DmsCalendarDaysAdapter(
+    private val listener: DmsCalendarDaysListener,
+    context: Context,
+    days: ArrayList<Any>) : ArrayAdapter<Any>(context, R.layout.item_big_calendar_view, days) {
+
     private val inflater= LayoutInflater.from(context)
 
     override fun getView(position: Int, getView: View?, parent: ViewGroup): View {
         with(listener) {
             val view =
                 getView?.let { it }
-                    .let { inflater.inflate(R.layout.item_big_calendar_view, parent, false) }
+                    .let {
+                        if (isBig)
+                            inflater.inflate(R.layout.item_big_calendar_view, parent, false)
+                        else
+                            inflater.inflate(R.layout.item_small_calendar_view, parent, false)
+                    }
 
             if (view is TextView) {
                 val day = getItem(position)
@@ -39,12 +46,12 @@ class DmsBigCalendarDaysAdapter(private val listener: DmsCalendarDaysListener, c
                 }
 
                 if (day is Int && day != 0) {
-                    if ("${year}년 ${month}월 ${day}일" == today)
+                    if ("${year}년 ${month}월 ${day}일" == today && isBig)
                         view.background = context.getDrawable(R.drawable.calendar_day_stroke)
 
                     view.setOnClickListener {
                         selectedTv?.let { tv ->
-                            if ("${year}년 ${month}월 ${tv.text}일" == today) {
+                            if ("${year}년 ${month}월 ${tv.text}일" == today && isBig) {
                                 tv.background = context.getDrawable(R.drawable.calendar_day_stroke)
                             }
                             else {
@@ -59,7 +66,11 @@ class DmsBigCalendarDaysAdapter(private val listener: DmsCalendarDaysListener, c
                         }
 
                         view.setTextColor(ContextCompat.getColor(context, R.color.black_100))
-                        view.background = context.getDrawable(R.drawable.calendar_day_solid)
+
+                        if (isBig)
+                            view.background = context.getDrawable(R.drawable.big_calendar_day_solid)
+                        else
+                            view.background = context.getDrawable(R.drawable.small_calendar_day_solid)
 
                         selectedDay(day)
 

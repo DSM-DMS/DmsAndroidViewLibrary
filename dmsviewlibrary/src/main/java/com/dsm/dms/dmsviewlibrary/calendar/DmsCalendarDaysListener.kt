@@ -27,5 +27,7 @@ interface DmsCalendarDaysListener {
 
     val eventDays: ArrayList<String>
 
+    val isBig: Boolean
+
     fun selectedDay(day: Int)
 }
