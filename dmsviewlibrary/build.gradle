@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
 android {
@@ -38,36 +40,98 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
 
-def githubProperties = new Properties()
-githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+group = "com.dsm.dms.library"
 
-def getVersionName = { ->
-    return "0.0.2"
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+
+                name 'DmsAndroidViewLibrary'
+                url 'https://github.com/DSM-DMS/DmsAndroidViewLibrary'
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'jinusong'
+                        name 'Song jinwoo'
+                        email 'sugwer7464@dsm.hs.kr'
+                    }
+                }
+
+                scm {
+                    connection 'https://github.com/DSM-DMS/DmsAndroidViewLibrary.git'
+                    developerConnection 'https://github.com/DSM-DMS/DmsAndroidViewLibrary.git'
+                    url 'https://github.com/DSM-DMS/DmsAndroidViewLibrary'
+                }
+            }
+        }
+    }
 }
 
-def getArtificatId = { ->
-    return "dmsviewlibrary"
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('github.properties').newDataInputStream())
+
+bintray {
+
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    publications = ['MyPub']
+
+    pkg {
+        userOrg = 'dsm-dms'
+        repo = 'DmsAndroidViewLibrary'
+        name = 'dmsviewlibrary'
+        websiteUrl = 'https://github.com/DSM-DMS/DmsAndroidViewLibrary'
+        vcsUrl = "https://github.com/DSM-DMS/DmsAndroidViewLibrary.git"
+        licenses = ["Apache-2.0"]
+        publish = true
+        publicDownloadNumbers = true
+        version {
+            name = '0.0.1'
+            desc = 'dmsviewlibrary'
+            vcsTag = '0.0.1'
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
+    }
 }
 
 publishing {
     publications {
-        bar(MavenPublication) {
+        MyPub(MavenPublication) {
             groupId 'com.dsm.dms.library'
-            artifactId getArtificatId()
-            version getVersionName()
-            artifact("$buildDir/outputs/aar/${getArtificatId()}-release.aar")
-        }
-    }
+            artifactId 'dmsviewlibrary'
+            version '0.0.1'
 
-    repositories {
-        maven {
-            name = "DmsAndroidViewLibrary"
-
-            url = uri("https://maven.pkg.github.com/DSM-DMS/DmsAndroidViewLibrary")
-            credentials {
-                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
-                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
-            }
+            artifact("$buildDir/outputs/aar/dmsviewlibrary-release.aar")
         }
     }
 }
