@@ -17,8 +17,8 @@
 
     <com.dsm.dms.dmsviewlibrary.calendar.small.DmsSmallCalendarView
         android:id="@+id/small_calendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_width="370dp"
+        android:layout_height="280dp"/>
 
     <TextView
         android:id="@+id/small_text"

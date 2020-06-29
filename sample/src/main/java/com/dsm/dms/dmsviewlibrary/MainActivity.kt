@@ -11,7 +11,7 @@ class MainActivity: AppCompatActivity(), DmsCalendarUserListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         big_calendar.setCalendar(Date(), this)
-        big_calendar.setBigCalendarEventDays(arrayListOf(Date()))
+        big_calendar.setCalendarEventDays(arrayListOf(Date()))
 
         small_calendar.setCalendar(Date(), this)
     }

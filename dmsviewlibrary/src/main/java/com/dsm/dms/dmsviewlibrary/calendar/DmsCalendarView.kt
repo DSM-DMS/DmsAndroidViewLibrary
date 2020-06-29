@@ -33,9 +33,12 @@ abstract class DmsCalendarView(context: Context, attrs: AttributeSet): LinearLay
     override var eventListener: DmsCalendarUserListener? = null
 
     override fun selectedDay(day: Int) {
-        val daySdf = SimpleDateFormat("yyyy년 M월 d일 E요일", Locale.KOREAN)
-        calendar.set(Calendar.DAY_OF_MONTH, day)
-        titleTv.text = daySdf.format(calendar.time)
+        if (isBig) {
+            val daySdf = SimpleDateFormat("yyyy년 M월 d일 E요일", Locale.KOREAN)
+            calendar.set(Calendar.DAY_OF_MONTH, day)
+            titleTv.text = daySdf.format(calendar.time)
+        }
+        else titleTv.text = "${year}년 ${month}월"
 
         selectedDay = day
     }
@@ -59,7 +62,7 @@ abstract class DmsCalendarView(context: Context, attrs: AttributeSet): LinearLay
         selectedDay(today)
     }
 
-    fun setBigCalendarEventDays(dates: ArrayList<Date>) {
+    fun setCalendarEventDays(dates: ArrayList<Date>) {
         eventDays.clear()
         dates.forEach { date ->
             eventDays.add(
