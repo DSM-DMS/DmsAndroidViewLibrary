@@ -107,7 +107,7 @@ abstract class DmsCalendarView(context: Context, attrs: AttributeSet): LinearLay
             cells.add(0)
         }
 
-        for (i in 1 until calendar.getActualMaximum(Calendar.DAY_OF_MONTH)) {
+        for (i in 1 .. calendar.getActualMaximum(Calendar.DAY_OF_MONTH)) {
             cells.add(i)
         }
 
