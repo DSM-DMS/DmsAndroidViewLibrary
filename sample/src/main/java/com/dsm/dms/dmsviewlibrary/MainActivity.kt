@@ -1,6 +1,7 @@
 package com.dsm.dms.dmsviewlibrary
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.dsm.dms.dmsviewlibrary.user.DmsCalendarUserListener
 import kotlinx.android.synthetic.main.main_activity.*
@@ -14,6 +15,23 @@ class MainActivity: AppCompatActivity(), DmsCalendarUserListener {
         big_calendar.setCalendarEventDays(arrayListOf(Date()))
 
         small_calendar.setCalendar(Date(), this)
+
+        button.setOnClickListener {
+            button.onLoad("로딩")
+
+            Handler().postDelayed(
+                {
+                    button.onError("에러")
+                    Handler().postDelayed(
+                        {
+                            button.onLoad("로딩")
+                            Handler().postDelayed(
+                                {
+                                    button.onSuccess("성공")
+                                }, 5000)
+                        }, 5000)
+                }, 5000)
+        }
     }
 
     override fun selectedEvent(dateString: String) {
