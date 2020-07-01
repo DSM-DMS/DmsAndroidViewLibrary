@@ -6,4 +6,10 @@
     <string name="path_ic_after">
         M3.315,15.687a1.065,1.065 0,0 0,1.509 0l7.086,-7.086a0.849,0.849 0,0 0,0 -1.2L4.824,0.313a1.067,1.067 0,0 0,-1.509 1.509l6.174,6.182L3.306,14.187a1.063,1.063 0,0 0,0.009 1.5z
     </string>
+    <string name="path_ic_check_circle">
+        M12,12m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0
+    </string>
+    <string name="path_ic_check_tick">
+        M6,11 l0,0 l0,0
+    </string>
 </resources>

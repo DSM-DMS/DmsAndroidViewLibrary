@@ -18,4 +18,6 @@
     <dimen name="font_950">40sp</dimen>
     <dimen name="font_1000">42sp</dimen>
     <dimen name="font_1150">48sp</dimen>
+
+    <dimen name="check_size">20dp</dimen>
 </resources>
