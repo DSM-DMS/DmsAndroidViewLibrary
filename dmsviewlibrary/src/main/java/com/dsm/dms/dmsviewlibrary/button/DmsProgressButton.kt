@@ -17,7 +17,9 @@ import android.view.Gravity
 import androidx.appcompat.widget.AppCompatTextView
 
 
-class DmsProgressButton(context: Context, attrs: AttributeSet): AppCompatTextView(context, attrs) {
+class DmsProgressButton(
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
+): AppCompatTextView(context, attrs, defStyleAttr) {
 
     var originText: String = ""
 

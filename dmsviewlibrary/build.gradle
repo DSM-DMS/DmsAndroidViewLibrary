@@ -50,7 +50,7 @@ install {
                 packaging 'aar'
                 groupId 'com.dsm.dms.library'
                 artifactId 'dmsviewlibrary'
-                version '0.0.3'
+                version '0.0.3-hotfix'
 
                 name 'DmsAndroidViewLibrary'
                 url 'https://github.com/DSM-DMS/DmsAndroidViewLibrary'
@@ -120,9 +120,9 @@ bintray {
         publish = true
         publicDownloadNumbers = true
         version {
-            name = '0.0.3'
+            name = '0.0.3-hotfix'
             desc = 'dmsviewlibrary'
-            vcsTag = '0.0.3'
+            vcsTag = '0.0.3-hotfix'
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
         }
     }
@@ -133,7 +133,7 @@ publishing {
         MyPub(MavenPublication) {
             groupId 'com.dsm.dms.library'
             artifactId 'dmsviewlibrary'
-            version '0.0.3'
+            version '0.0.3-hotfix'
 
             artifact("$buildDir/outputs/aar/dmsviewlibrary-release.aar")
         }
