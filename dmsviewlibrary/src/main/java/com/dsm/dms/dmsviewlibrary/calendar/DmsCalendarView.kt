@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-abstract class DmsCalendarView(
+abstract class DmsCalendarView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ): LinearLayout(context, attrs, defStyleAttr), DmsCalendarDaysListener {
 

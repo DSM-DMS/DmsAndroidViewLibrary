@@ -16,7 +16,7 @@ import java.util.Calendar.*
 import kotlin.collections.ArrayList
 
 
-class DmsSmallCalendarView(
+class DmsSmallCalendarView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ): DmsCalendarView(context, attrs, defStyleAttr) {
 
