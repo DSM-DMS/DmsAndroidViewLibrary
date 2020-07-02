@@ -16,9 +16,7 @@ import java.util.Calendar.*
 import kotlin.collections.ArrayList
 
 
-class DmsBigCalendarView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-): DmsCalendarView(context, attrs, defStyleAttr) {
+class DmsBigCalendarView(context: Context, attrs: AttributeSet) : DmsCalendarView(context, attrs) {
 
     override val isBig: Boolean = true
 

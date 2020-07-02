@@ -11,9 +11,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-abstract class DmsCalendarView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-): LinearLayout(context, attrs, defStyleAttr), DmsCalendarDaysListener {
+abstract class DmsCalendarView(context: Context, attrs: AttributeSet): LinearLayout(context, attrs), DmsCalendarDaysListener {
 
     override lateinit var beforeImv: ImageView
     override lateinit var afterImv: ImageView
