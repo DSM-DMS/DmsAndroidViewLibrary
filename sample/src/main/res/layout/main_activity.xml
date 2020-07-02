@@ -25,9 +25,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <com.dsm.dms.dmsviewlibrary.button.DmsProgressButton
+    <com.dsm.dms.dmsviewlibrary.button.material.DmsProgressMaterialButton
         android:id="@+id/button"
-        android:foreground="?android:attr/selectableItemBackground"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:padding="16dp"
         android:text="버튼"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
