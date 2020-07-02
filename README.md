@@ -5,7 +5,7 @@ Dms에서 사용할 Android View Library 입니다.
 ## Setting
 build.gradle에 다음과 같이 추가해주세요.
 ```gradle
-implementation 'com.dsm.dms.library:dmsviewlibrary:0.0.3-hotfix'
+implementation 'com.dsm.dms.library:dmsviewlibrary:0.0.4-rc'
 ```
 
 ## Functions
