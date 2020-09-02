@@ -28,9 +28,9 @@ class MainActivity: AppCompatActivity(), DmsCalendarUserListener {
                             Handler().postDelayed(
                                 {
                                     button.onSuccess("성공")
-                                }, 5000)
-                        }, 5000)
-                }, 5000)
+                                }, 4000)
+                        }, 4000)
+                }, 4000)
         }
     }
 

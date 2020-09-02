@@ -62,14 +62,13 @@ class DmsProgressButton(context: Context, attrs: AttributeSet): AppCompatTextVie
         setTextColor(ContextCompat.getColor(context, R.color.black_100))
         text = errorMessage
 
-        isClickable = true
-        isFocusable = true
-
         Handler().postDelayed(
             {
+                isClickable = true
+                isFocusable = true
                 changeBackgroundColorAnimation(errorColor, R.color.main_900)
                 text = originText
-            }, 4000)
+            }, 3000)
     }
 
     override fun onLoad(loadingText: String) {
@@ -111,7 +110,7 @@ class DmsProgressButton(context: Context, attrs: AttributeSet): AppCompatTextVie
             Handler().postDelayed(
                 {
                     text = originText
-                }, 4000)
+                }, 3000)
         }
     }
 

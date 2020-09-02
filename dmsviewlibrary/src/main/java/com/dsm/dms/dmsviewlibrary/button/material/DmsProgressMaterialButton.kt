@@ -63,11 +63,10 @@ class DmsProgressMaterialButton(context: Context, attrs: AttributeSet): Material
         setTextColor(ContextCompat.getColor(context, R.color.black_100))
         text = errorMessage
 
-        isClickable = true
-        isFocusable = true
-
         Handler().postDelayed(
             {
+                isClickable = true
+                isFocusable = true
                 changeBackgroundColorAnimation(errorColor, R.color.main_900)
                 text = originText
             }, 4000)
