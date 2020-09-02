@@ -22,6 +22,7 @@ import com.google.android.material.button.MaterialButton
 class DmsProgressMaterialButton(context: Context, attrs: AttributeSet): MaterialButton(context, attrs), DmsProgressButtonFunc {
 
     override var originText: String = ""
+    override var isComeback: Boolean = true
 
     override val progressDrawable = CircularProgressDrawable(context).apply {
         setStyle(CircularProgressDrawable.LARGE)
@@ -104,13 +105,15 @@ class DmsProgressMaterialButton(context: Context, attrs: AttributeSet): Material
             animatedDrawable.start()
         }
 
-        isClickable = true
-        isFocusable = true
+        if (isComeback) {
+            isClickable = true
+            isFocusable = true
 
-        Handler().postDelayed(
-            {
-                text = originText
-            }, 4000)
+            Handler().postDelayed(
+                {
+                    text = originText
+                }, 4000)
+        }
     }
 
     override fun changeBackgroundColorAnimation(colorFromId: Int, colorToId: Int) {

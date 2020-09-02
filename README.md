@@ -5,7 +5,7 @@ Dms에서 사용할 Android View Library 입니다.
 ## Setting
 build.gradle에 다음과 같이 추가해주세요.
 ```gradle
-implementation 'com.dsm.dms.library:dmsviewlibrary:0.0.4-rc1'
+implementation 'com.dsm.dms.library:dmsviewlibrary:0.0.4-rc2'
 implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 implementation 'com.google.android.material:material:1.2.0-alpha06'
 ```
@@ -94,6 +94,8 @@ DmsProgressButton은 총 3가지 함수를 제공합니다.
     ![image](images/DmsProgressButtonSuccess.png)
 
     check mark가 아닌 다른 icon animation을 보여주고 싶으시거나 모양을 변경하고 싶으시다면 ```animatedDrawable ``` 변수에 접근하셔서 애니메이션, 사이즈 및 스타일을 변경할 수 있습니다.
+
+    또, isComeback 이라는 boolean 값을 조정하여 원래 상태로 돌아올 것인지 아닌지에 대해 설정할 수 있습니다.
 
 ### DmsProgressMaterialButton
 DmsProgressButton과 동일한 기능을 가지고 있습니다.

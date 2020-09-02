@@ -24,6 +24,7 @@ import com.google.android.material.textview.MaterialTextView
 interface DmsProgressButtonFunc {
 
     var originText: String
+    var isComeback: Boolean
 
     val progressDrawable: CircularProgressDrawable
 

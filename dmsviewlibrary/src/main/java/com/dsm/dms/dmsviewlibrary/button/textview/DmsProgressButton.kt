@@ -21,6 +21,7 @@ import com.dsm.dms.dmsviewlibrary.button.DmsProgressButtonFunc
 class DmsProgressButton(context: Context, attrs: AttributeSet): AppCompatTextView(context, attrs), DmsProgressButtonFunc {
 
     override var originText: String = ""
+    override var isComeback: Boolean = true
 
     override val progressDrawable = CircularProgressDrawable(context).apply {
         setStyle(CircularProgressDrawable.LARGE)
@@ -103,13 +104,15 @@ class DmsProgressButton(context: Context, attrs: AttributeSet): AppCompatTextVie
             animatedDrawable.start()
         }
 
-        isClickable = true
-        isFocusable = true
+        if (isComeback) {
+            isClickable = true
+            isFocusable = true
 
-        Handler().postDelayed(
-            {
-                text = originText
-            }, 4000)
+            Handler().postDelayed(
+                {
+                    text = originText
+                }, 4000)
+        }
     }
 
     override fun changeBackgroundColorAnimation(colorFromId: Int, colorToId: Int) {
