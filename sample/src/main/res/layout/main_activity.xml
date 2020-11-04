@@ -40,12 +40,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"/>
 
-        <com.dsm.dms.dmsviewlibrary.switch.DmsSettingSwitch
+        <com.dsm.dms.dmsviewlibrary.widget.DmsSettingSwitch
             android:id="@+id/dms_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <com.dsm.dms.dmsviewlibrary.switch.DmsSettingSwitch
+        <com.dsm.dms.dmsviewlibrary.widget.DmsSettingSwitch
             android:id="@+id/dms_switch2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

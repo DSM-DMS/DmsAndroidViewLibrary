@@ -1,12 +1,12 @@
-[ ![Download](https://api.bintray.com/packages/dsm-dms/DmsAndroidViewLibrary/dmsviewlibrary/images/download.svg?version=0.0.5) ](https://bintray.com/dsm-dms/DmsAndroidViewLibrary/dmsviewlibrary/0.0.5/link)
+[ ![Download](https://api.bintray.com/packages/dsm-dms/DmsAndroidViewLibrary/dmsviewlibrary/images/download.svg?version=0.0.7) ](https://bintray.com/dsm-dms/DmsAndroidViewLibrary/dmsviewlibrary/0.0.7/link)
 # DmsAndroidViewLibrary 
 Dms에서 사용할 Android View Library 입니다.
-(version 0.0.5부터 darkmode를 지원합니다.)
+(version 0.0.7부터 darkmode를 지원합니다.)
 
 ## Setting
 build.gradle에 다음과 같이 추가해주세요.
 ```gradle
-implementation 'com.dsm.dms.library:dmsviewlibrary:0.0.5'
+implementation 'com.dsm.dms.library:dmsviewlibrary:0.0.7'
 implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 implementation 'com.google.android.material:material:1.2.0-alpha06'
 ```

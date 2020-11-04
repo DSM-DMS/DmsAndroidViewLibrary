@@ -1,4 +1,4 @@
-package com.dsm.dms.dmsviewlibrary.switch
+package com.dsm.dms.dmsviewlibrary.widget
 
 import android.content.Context
 import android.util.AttributeSet
