@@ -6,7 +6,7 @@
     <group android:name="background">
         <path
             android:name="circle"
-            android:fillColor="@color/black_100"
+            android:fillColor="@color/colorNightWhite"
             android:pathData="@string/path_ic_check_circle" />
     </group>
     <group android:name="check">
@@ -14,7 +14,7 @@
             android:name="tick"
             android:pathData="@string/path_ic_check_tick"
             android:strokeWidth="2"
-            android:strokeColor="@color/black_600" />
+            android:strokeColor="@color/colorNightGray" />
     </group>
 
 </vector>

@@ -4,6 +4,6 @@
     android:id="@+id/big_day_tv"
     android:layout_width="44dp"
     android:layout_height="44dp"
-    android:textColor="@color/black_900"
+    android:textColor="@color/colorNightBlack"
     android:textSize="@dimen/font_300"
     android:gravity="center"/>

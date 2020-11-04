@@ -50,7 +50,7 @@ install {
                 packaging 'aar'
                 groupId 'com.dsm.dms.library'
                 artifactId 'dmsviewlibrary'
-                version '0.0.4-rc3'
+                version '0.0.5'
 
                 name 'DmsAndroidViewLibrary'
                 url 'https://github.com/DSM-DMS/DmsAndroidViewLibrary'
@@ -65,7 +65,7 @@ install {
                     developer {
                         id 'jinusong'
                         name 'Song jinwoo'
-                        email 'sugwer7464@dsm.hs.kr'
+                        email 'sugwer7464@gmail.com'
                     }
                 }
 
@@ -120,9 +120,9 @@ bintray {
         publish = true
         publicDownloadNumbers = true
         version {
-            name = '0.0.4-rc3'
+            name = '0.0.5'
             desc = 'dmsviewlibrary'
-            vcsTag = '0.0.4-rc3'
+            vcsTag = '0.0.5'
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
         }
     }
@@ -133,7 +133,7 @@ publishing {
         MyPub(MavenPublication) {
             groupId 'com.dsm.dms.library'
             artifactId 'dmsviewlibrary'
-            version '0.0.4-rc3'
+            version '0.0.5'
 
             artifact("$buildDir/outputs/aar/dmsviewlibrary-release.aar")
         }

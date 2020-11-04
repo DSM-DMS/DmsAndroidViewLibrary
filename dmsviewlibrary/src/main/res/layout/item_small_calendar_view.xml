@@ -4,6 +4,6 @@
     android:id="@+id/small_day_tv"
     android:layout_width="36dp"
     android:layout_height="24dp"
-    android:textColor="@color/black_900"
+    android:textColor="@color/colorNightBlack"
     android:textSize="@dimen/font_250"
     android:gravity="center"/>

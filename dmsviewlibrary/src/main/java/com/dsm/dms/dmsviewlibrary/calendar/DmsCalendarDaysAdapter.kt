@@ -15,9 +15,10 @@ import java.util.*
 class DmsCalendarDaysAdapter(
     private val listener: DmsCalendarDaysListener,
     context: Context,
-    days: ArrayList<Any>) : ArrayAdapter<Any>(context, R.layout.item_big_calendar_view, days) {
+    days: ArrayList<Any>
+) : ArrayAdapter<Any>(context, R.layout.item_big_calendar_view, days) {
 
-    private val inflater= LayoutInflater.from(context)
+    private val inflater = LayoutInflater.from(context)
 
     override fun getView(position: Int, getView: View?, parent: ViewGroup): View {
         with(listener) {
@@ -34,7 +35,7 @@ class DmsCalendarDaysAdapter(
                 val day = getItem(position)
 
                 if (day != 0) {
-                    view.setTextColor(ContextCompat.getColor(context, R.color.black_900))
+                    view.setTextColor(ContextCompat.getColor(context, R.color.colorNightBlack))
                     eventDays.forEach { eventDay ->
                         if ("${year}년 ${month}월 ${day}일" == eventDay) {
                             view.setTextColor(ContextCompat.getColor(context, R.color.main_900))
@@ -57,7 +58,7 @@ class DmsCalendarDaysAdapter(
                             else {
                                 tv.background = context.getDrawable(R.drawable.calendar_day_normal)
                             }
-                            tv.setTextColor(ContextCompat.getColor(context, R.color.black_900))
+                            tv.setTextColor(ContextCompat.getColor(context, R.color.colorNightBlack))
                             eventDays.forEach { eventDay ->
                                 if ("${year}년 ${month}월 ${tv.text}일" == eventDay) {
                                     tv.setTextColor(ContextCompat.getColor(context, R.color.main_900))
